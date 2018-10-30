@@ -52,7 +52,7 @@ def write(value: BValue) -> Generator[bytes, None, None]:
             for k, v in value.items()
             for u in [is_unicode(k)]
         ]
-        items.sort(key=lambda item: item[0])
+        items.sort()
         yield b'd'
         for u, k, v in items:
             if u:
