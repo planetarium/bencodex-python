@@ -23,10 +23,10 @@ __all__ = (
 def load_testsuite_data() -> Generator[Tuple[str, object, bytes], None, None]:
     pkg = 'bencodex'
     suffix_re = re.compile(r'\.ya?ml$')
-    for filename in resource_listdir(pkg, 'testsuite'):
+    for filename in resource_listdir(pkg, 'spec/testsuite'):
         if not filename.lower().endswith(('.yaml', '.yml')):
             continue
-        yaml_filename = 'testsuite/' + filename
+        yaml_filename = 'spec/testsuite/' + filename
         data_filename = suffix_re.sub('.dat', yaml_filename)
         if not resource_exists(pkg, data_filename):
             continue

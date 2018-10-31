@@ -1,0 +1,3 @@
+[submodule "bencodex/spec"]
+	path = bencodex/spec
+	url = git://github.com/planetarium/bencodex.git

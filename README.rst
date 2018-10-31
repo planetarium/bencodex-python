@@ -3,7 +3,7 @@ Bencodex reader/writer for Python
 
 This package implements Bencodex_ serializtion format which extends Bencoding_.
 
-.. _Bencodex: https://gist.github.com/dahlia/6d8e95bb598f60fecaac1dc82223a7e8
+.. _Bencodex: https://github.com/planetarium/bencodex
 .. _Bencoding: http://www.bittorrent.org/beps/bep_0003.html#bencoding
 
 
