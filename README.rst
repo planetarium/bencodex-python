@@ -1,6 +1,10 @@
 Bencodex reader/writer for Python
 =================================
 
+.. image:: https://travis-ci.com/planetarium/bencodex-python.svg?branch=master
+   :alt: Build Status
+   :target: https://travis-ci.com/planetarium/bencodex-python
+
 This package implements Bencodex_ serializtion format which extends Bencoding_.
 
 .. _Bencodex: https://github.com/planetarium/bencodex
