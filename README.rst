@@ -18,7 +18,7 @@ This package's API follows the tradition of Python's ``pickle`` and ``json``
 modules:
 
 - ``bencodex.dump(obj: bencodex.BValue, fileobj: typing.BinaryIO) -> None``
-- ``bencodex.dumps(obj: bencodex.BValue) -> None``
+- ``bencodex.dumps(obj: bencodex.BValue) -> bytes``
 - ``bencodex.load(fileobj: typing.BinaryIO) -> bencodex.BValue``
 - ``bencodex.loads(encoded: bytes) -> bencodex.BValue``
 
