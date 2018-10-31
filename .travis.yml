@@ -1,5 +1,6 @@
 language: python
 python:
+- pypy3.5
 - 3.5
 - 3.6
 matrix:
