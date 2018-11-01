@@ -23,6 +23,16 @@ modules:
 - ``bencodex.loads(encoded: bytes) -> bencodex.BValue``
 
 
+Examples
+--------
+
+>>> from bencodex import dumps, loads
+>>> dumps({'name': 'Jane Doe', 'age': 30, 'nationality': ['BR', 'US']})
+b'du3:agei30eu4:nameu8:Jane Doeu11:nationalitylu2:BRu2:USee'
+>>> loads(_)
+{'age': 30, 'name': 'Jane Doe', 'nationality': ['BR', 'US']}
+
+
 License
 -------
 
