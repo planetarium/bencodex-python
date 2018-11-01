@@ -4,7 +4,7 @@ Changelog
 Version 1.0.0
 -------------
 
-To be released.
+Released on November 2, 2018.
 
 - Implemented the `specification version 1`__.
 
