@@ -9,4 +9,24 @@ matrix:
     dist: xenial
     sudo: true
 install: pip install tox-travis
-script: tox
+script:
+- tox
+- '[[ "$TRAVIS_TAG" = "" ]] || [[ "$TRAVIS_TAG" = "$(python setup.py -V)" ]]'
+- |
+  last_commit="${TRAVIS_PULL_REQUEST_SHA:-${TRAVIS_TAG:-${TRAVIS_COMMIT}}}"
+  echo "$last_commit"
+  git show --format=%B --quiet "$last_commit" > /tmp/last-commit-message
+  cat /tmp/last-commit-message
+- |
+  if fgrep '[changelog skip]' /tmp/last-commit-message > /dev/null; then
+    echo "Skip changelog checker..."
+  elif [[ "$TRAVIS_TAG" != "" ]]; then
+    ! fgrep -i "to be released" CHANGES.rst
+  elif [[ "$TRAVIS_COMMIT_RANGE" != "" ]]; then
+    {
+      git diff --name-only "$TRAVIS_COMMIT_RANGE" || \
+      git diff --name-only "$TRAVIS_COMMIT^..$TRAVIS_COMMIT"
+    } > /tmp/changed-files.txt
+    cat /tmp/changed-files.txt
+    fgrep CHANGES.rst /tmp/changed-files.txt
+  fi
