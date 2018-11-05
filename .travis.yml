@@ -11,6 +11,7 @@ matrix:
 install: pip install tox-travis
 script:
 - tox
+- '[[ "$TRAVIS_PYTHON_VERSION" != "3.7" ]] || tox -e mypy'
 - '[[ "$TRAVIS_TAG" = "" ]] || [[ "$TRAVIS_TAG" = "$(python setup.py -V)" ]]'
 - |
   last_commit="${TRAVIS_PULL_REQUEST_SHA:-${TRAVIS_TAG:-${TRAVIS_COMMIT}}}"
