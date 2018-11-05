@@ -4,7 +4,7 @@ Changelog
 Version 1.0.1
 -------------
 
-To be released.
+Released on November 5, 2018.
 
 - Marked the package as supporting type checking according to `PEP 561`_.
 
