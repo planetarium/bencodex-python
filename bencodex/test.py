@@ -5,7 +5,7 @@ from typing import Generator, Tuple
 import unittest
 
 from pkg_resources import resource_exists, resource_listdir, resource_string
-from yaml import load as load_yaml
+from yaml import Loader, load as load_yaml
 
 from . import dump, dumps, load, loads
 from .reader import parse, parse_bytes, parse_digits, parse_text
@@ -30,7 +30,10 @@ def load_testsuite_data() -> Generator[Tuple[str, object, bytes], None, None]:
         data_filename = suffix_re.sub('.dat', yaml_filename)
         if not resource_exists(pkg, data_filename):
             continue
-        yaml = load_yaml(resource_string(pkg, yaml_filename).decode('utf-8'))
+        yaml = load_yaml(
+            resource_string(pkg, yaml_filename).decode('utf-8'),
+            Loader=Loader
+        )
         data = resource_string(pkg, data_filename)
         yield filename, yaml, data
 
