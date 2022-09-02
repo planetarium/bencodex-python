@@ -8,6 +8,7 @@ To be released.
 
 - Python 3.5 and 3.6 are no more supported.  Instead, Python 3.8, 3.9, and 3.10
   are now officially supported.
+- Added ``show-bencodex``, a CLI program.
 
 
 Version 1.0.1

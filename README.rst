@@ -37,6 +37,19 @@ b'du3:agei30eu4:nameu8:Jane Doeu11:nationalitylu2:BRu2:USee'
 {'age': 30, 'name': 'Jane Doe', 'nationality': ['BR', 'US']}
 
 
+Debug-friendly formatter
+------------------------
+
+The package also provides a CLI program named ``show-bencodex``, which shows
+the given Bencodex data file (or data from the stdin) in the debug-friendly
+format:
+
+.. code:: console
+
+   $ show-bencodex bencodex.dat
+   $ cat bencodex.dat | show-bencodex
+
+
 License
 -------
 
