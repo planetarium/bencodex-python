@@ -1,9 +1,13 @@
 Bencodex reader/writer for Python
 =================================
 
-.. image:: https://travis-ci.com/planetarium/bencodex-python.svg?branch=master
+.. image:: https://img.shields.io/pypi/v/bencodex
+   :alt: PyPI
+   :target: https://pypi.org/project/bencodex/
+
+.. image:: https://github.com/planetarium/bencodex-python/actions/workflows/build.yaml/badge.svg
    :alt: Build Status
-   :target: https://travis-ci.com/planetarium/bencodex-python
+   :target: https://github.com/planetarium/bencodex-python/actions/workflows/build.yaml
 
 This package implements Bencodex_ serialization format which extends Bencoding_.
 

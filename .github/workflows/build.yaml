@@ -1,0 +1,30 @@
+name: build
+on:
+  push: []
+  pull_request: []
+  schedule:
+  - cron: 0 0 1 * *
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        python-version:
+        - "3.7"
+        - "3.8"
+        - "3.9"
+        - "3.10"
+        - pypy-3.9
+      fail-fast: false
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: true
+    - uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    - run: |
+        python3 -m pip install --upgrade pip
+        python3 -m pip install tox tox-gh-actions
+    - run: tox
