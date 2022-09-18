@@ -48,7 +48,7 @@ def write(value: BValue) -> Generator[bytes, None, None]:
                 return True
             raise TypeError('dictionary key must be a bytes or str')
         items = [
-            (u, k.encode('utf-8') if u else k, v)
+            (u, k.encode('utf-8') if u and isinstance(k, str) else k, v)
             for k, v in value.items()
             for u in [is_unicode(k)]
         ]
